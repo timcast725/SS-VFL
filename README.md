@@ -44,7 +44,7 @@ Then, to run downstream supervised training:
 ```.bash
 python main_VFLcls.py -a resnet50 --lr 0.03 --schedule 150 300 --batch-size 256 --mode $mode --labeled_frac $frac --epochs 500 --world-size 1 --rank 0 -j 16 --multiprocessing-distributed --pretrained ./results/mocom_VFL0_0.999_contr1tau0.2_b128_lr0.03_e120,160,200/checkpoint_0199.pth.tar 
 ```
-where $mode is set to 'supervised', 'unsupervised, or 'semi' depending on if you are running Supervised VFL, SS-VFL-I, or SS-VFL-C, respectively,
+where $mode is set to 'supervised', 'unsupervised;, or 'semi' depending on if you are running Supervised VFL, SS-VFL-I, or SS-VFL-C, respectively,
 and $frac is the fraction of the full dataset that is labeled (for example, frac=0.1 means that 10% of the dataset is labeled).
 
 Loss and accuracy results are generated as pickles files in the current working directory.
@@ -60,7 +60,7 @@ Then, to run downstream supervised training:
 ```.bash
 python main_MVCNNcls.py -a resnet18 --seed $seed --lr 0.01 --schedule 150 300 --batch-size 64 --mode $mode --labeled_frac $frac --epochs 500 --world-size 1 --rank 0 -j 16 --multiprocessing-distributed --pretrained ./results/mocom_mvcnn0_0.999_contr1tau0.2_b32_lr0.03_e120,160,200/checkpoint_0199.pth.tar ./data/10class/classes/
 ```
-where $mode is set to 'supervised', 'unsupervised, or 'semi' depending on if you are running Supervised VFL, SS-VFL-I, or SS-VFL-C, respectively,
+where $mode is set to 'supervised', 'unsupervised', or 'semi' depending on if you are running Supervised VFL, SS-VFL-I, or SS-VFL-C, respectively,
 and $frac is the fraction of the full dataset that is labeled (for example, frac=0.1 means that 10% of the dataset is labeled).
 
 Loss and accuracy results are generated as pickles files in the current working directory.
